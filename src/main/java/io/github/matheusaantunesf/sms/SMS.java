@@ -11,6 +11,11 @@ package io.github.matheusaantunesf.sms;
 public class SMS {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Mensageiro mensageiro = new MensageiroReal();
+        
+        Mensageiro proxy = new ProxyMensageiro(mensageiro, "1234");
+        Mensageiro mensageiroFinal = new HorarioDecorator(proxy);
+        
+        mensageiroFinal.enviar("Teste de envio de mensagem", "1234");
     }
 }
