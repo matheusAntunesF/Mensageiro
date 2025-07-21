@@ -17,5 +17,6 @@ public class SMS {
         Mensageiro mensageiroFinal = new HorarioDecorator(proxy);
         
         mensageiroFinal.enviar("Teste de envio de mensagem", "1234");
+        mensageiroFinal.enviar("2o Teste de envio de mensagem", "1000");
     }
 }

@@ -11,14 +11,14 @@ package io.github.matheusaantunesf.sms;
 public class ProxyMensageiro
         implements Mensageiro {
 
-    private Mensageiro mensageiroReal;
+    private Mensageiro mensageiro;
     private String senhaCorreta;
 
     public ProxyMensageiro() {
     }
     
-    public ProxyMensageiro(Mensageiro mensageiroReal, String senha){
-        this.mensageiroReal = mensageiroReal;
+    public ProxyMensageiro(Mensageiro mensageiro, String senha){
+        this.mensageiro = mensageiro;
         this.senhaCorreta = senha;
     }
     
@@ -26,7 +26,7 @@ public class ProxyMensageiro
     public void enviar(String mensagem, String senhaFornecida) {
         if(senhaCorreta.equals(senhaFornecida)){
             System.out.println("Senha correta. Acesso liberado.");
-            mensageiroReal.enviar(mensagem, senhaFornecida);
+            mensageiro.enviar(mensagem, senhaFornecida);
         } else{
             System.out.println("Senha incorreta. Acesso negado.");
         }

@@ -22,7 +22,8 @@ public class HorarioDecorator
     
     @Override
     public void enviar(String mensagem, String senha){
-        String horario = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/dyyyy HH:mm:ss"));
+        String horario = LocalDateTime.now()
+                .format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
         String novaMensagem = "[" + horario + "]" + mensagem;
         
         super.enviar(novaMensagem, senha);
